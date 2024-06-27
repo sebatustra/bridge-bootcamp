@@ -8,7 +8,7 @@ const connection = new Connection(clusterApiUrl("devnet"), "confirmed");
     try {
         console.log("airdropping to wallet: ", keypair.publicKey.toString())
 
-        const txSig = await connection.requestAirdrop(keypair.publicKey, 2 * LAMPORTS_PER_SOL);
+        const txSig = await connection.requestAirdrop(keypair.publicKey, 1 * LAMPORTS_PER_SOL);
         const latestBlockHash = await connection.getLatestBlockhash();
 
         await connection.confirmTransaction({
