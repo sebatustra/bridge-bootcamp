@@ -1,5 +1,5 @@
 import { Transaction, SystemProgram, Connection, Keypair, LAMPORTS_PER_SOL, sendAndConfirmTransaction, PublicKey, clusterApiUrl } from "@solana/web3.js";
-import wallet from "./dev-wallet.json"
+import wallet from "../dev-wallet.json"
 
 const sender = Keypair.fromSecretKey(new Uint8Array(wallet));
 
