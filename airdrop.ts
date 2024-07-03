@@ -8,14 +8,7 @@ const connection = new Connection(clusterApiUrl("devnet"), "confirmed");
     try {
         console.log("airdropping to wallet: ", keypair.publicKey.toString())
 
-        const txSig = await connection.requestAirdrop(keypair.publicKey, 1 * LAMPORTS_PER_SOL);
-        const latestBlockHash = await connection.getLatestBlockhash();
-
-        await connection.confirmTransaction({
-            blockhash: latestBlockHash.blockhash,
-            lastValidBlockHeight: latestBlockHash.lastValidBlockHeight,
-            signature: txSig
-        });
+        const txSig = await connection.requestAirdrop(keypair.publicKey, 0.5 * LAMPORTS_PER_SOL);
 
         console.log(`https://explorer.solana.com/tx/${txSig}?cluster=devnet`)
     } catch(e) {
